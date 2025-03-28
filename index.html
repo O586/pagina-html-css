@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Контейнер для всієї сторінки -->
+    <div class="container">
+      <!-- Перший блок - відображення та редагування тексту -->
+      <div class="first show">
+        <!-- Блок тексту для редагування -->
+        <div class="block top-block">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <!-- Кнопки для редагування та стилізації тексту -->
+        <div class="center-block">
+          <input type="button" value="edit" class="btn-edit" />
+          <input type="button" value="style" class="btn-style" />
+        </div>
+
+        <!-- Блок для редагування тексту та стилізації -->
+        <div class="block bottom-block">
+          <!-- Блок редагування -->
+          <div class="edit-block">
+            <textarea class="edit-area"></textarea>
+            <input type="button" value="add" class="btn-add" />
+            <input type="button" value="save" class="btn-save" />
+          </div>
+
+          <!-- Блок стилізації -->
+          <div class="style-block">
+            <form>
+              <!-- Розмір шрифта -->
+              <div class="form-size">
+                <h2>Font Size</h2>
+                <input
+                  type="radio"
+                  onclick="fontSize(event)"
+                  name="size"
+                  value="12px"
+                /><span>12px</span>
+                <input
+                  type="radio"
+                  onclick="fontSize(event)"
+                  name="size"
+                  value="14px"
+                  checked
+                /><span>14px</span>
+                <input
+                  type="radio"
+                  onclick="fontSize(event)"
+                  name="size"
+                  value="16px"
+                /><span>16px</span>
+                <input
+                  type="radio"
+                  onclick="fontSize(event)"
+                  name="size"
+                  value="18px"
+                /><span>18px</span>
+                <input
+                  type="radio"
+                  onclick="fontSize(event)"
+                  name="size"
+                  value="20px"
+                /><span>20px</span>
+              </div>
+
+              <!-- Шрифт -->
+              <div class="form-family">
+                <h2>Font family</h2>
+                <div class="custom-select">
+                  <select id="fontFamily">
+                    <option value="">Choose option</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="monospace">Monospace</option>
+                    <option value="sans-serif">Sans-serif</option>
+                  </select>
+                </div>
+                <div class="arrows">
+                  <span class="arrow-up"></span>
+                  <span class="arrow-down"></span>
+                </div>
+              </div>
+
+              <!-- Колір тексту та фону -->
+              <div class="form-color">
+                <h2>Color</h2>
+                <input
+                  type="button"
+                  value="Color of Text"
+                  class="btn-text-color"
+                />
+                <input
+                  type="button"
+                  value="Background color"
+                  class="btn-bg-color"
+                />
+                <div class="colors hide">
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                  <div class="colors-box"></div>
+                </div>
+              </div>
+
+              <!-- Стиль шрифта -->
+              <div class="form-style">
+                <input type="checkbox" onclick="fontWeight(event)" /><span
+                  >Bold text</span
+                >
+              </div>
+              <div class="form-style2">
+                <input type="checkbox" onclick="fontWeight(event)" /><span
+                  >Cursive text</span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Другий блок для створення таблиці чи списку -->
+      <div class="second">
+        <div class="block">
+          <h1 class="t2">Choose what you want :</h1>
+          <form>
+            <input
+              type="radio"
+              name="choose"
+              id="choose-table"
+              class="choose1"
+            /><span class="t3">table</span>
+            <input
+              type="radio"
+              name="choose"
+              id="choose-list"
+              class="choose1"
+            /><span class="t3">list</span>
+          </form>
+
+          <!-- Форма створення таблиці -->
+          <div class="create-table hide">
+            <form name="form-table" class="table-form">
+              <div class="form-group">
+                <label for="count-tr" class="t4">Count TR :</label>
+                <input
+                  type="text"
+                  name="count-tr"
+                  class="input-tr"
+                  placeholder="Count TR"
+                />
+              </div>
+              <div class="form-group">
+                <label for="count-td" class="t4">Count TD</label>
+                <input
+                  type="text"
+                  name="count-td"
+                  class="input-td"
+                  placeholder="Count TD"
+                />
+              </div>
+              <div class="form-group1">
+                <label for="count-tr" class="t3"
+                  >Add style to your table:</label
+                >
+              </div>
+              <div class="form-group">
+                <label for="width" class="t4">Width of TD :</label>
+                <input
+                  type="text"
+                  name="width"
+                  class="input-width"
+                  placeholder="Width of TD"
+                />
+              </div>
+              <div class="form-group">
+                <label for="height" class="t4">Height of TD :</label>
+                <input
+                  type="text"
+                  name="height"
+                  class="input-height"
+                  placeholder="Height of TD"
+                />
+              </div>
+              <div class="form-group">
+                <label for="border-width" class="t4">Width of border:</label>
+                <input
+                  type="text"
+                  name="border-width"
+                  class="input-border-width"
+                  placeholder="Border Width"
+                />
+                <label for="border-type" class="t4">Type of border:</label>
+                <select name="border-type" class="select-border-type">
+                  <option value="solid">Solid</option>
+                  <option value="dashed">Dashed</option>
+                  <option value="dotted">Dotted</option>
+                </select>
+                <label for="border-color" class="t4">Color of border:</label>
+                <select name="border-color" class="input-border-color">
+                  <option value="black">Black</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                </select>
+              </div>
+              <button type="button" class="btn-create-table">
+                Create table
+              </button>
+            </form>
+          </div>
+
+          <!-- Форма створення списку -->
+          <div class="create-list hide">
+            <form name="form-list" class="list-form">
+              <div class="form-group2">
+                <label for="count-li" class="t4">Count Li:</label>
+                <input
+                  type="text"
+                  name="count"
+                  class="input-count"
+                  placeholder="Count Li:"
+                />
+              </div>
+              <div class="form-group2">
+                <label for="type" class="t4">Type of marks:</label>
+                <select name="type" class="select-type">
+                  <option value="circle">Circle</option>
+                  <option value="disc">Disc</option>
+                  <option value="square">Square</option>
+                </select>
+              </div>
+              <input
+                type="button"
+                value="Create list"
+                name="create"
+                class="btn-create-list"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,660 @@
+/* Загальні стилі для всіх елементів */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Стилі для тіла сторінки */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Контейнер, який обгортає весь контент */
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Стилі для блоків */
+.block {
+  height: auto;
+  min-height: 320px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  margin: 20px 0px;
+  padding: 2%;
+  position: relative;
+  border: 1px solid #b9afaf;
+  box-sizing: border-box;
+}
+
+/* Стилі для редагування та стилю блоків */
+.edit-block,
+.style-block {
+  display: none;
+}
+
+.block2 {
+  height: 550px;
+}
+
+/* Стилі для заголовків та елементів */
+p {
+  padding-top: 15px;
+}
+
+/* Стилі для текстової області редагування */
+.edit-area {
+  width: 100%;
+  height: 170px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: rgba(0 0 0/50%);
+}
+
+/* Фокус на textarea */
+.edit-area:focus {
+  border-color: rgb(87, 147, 204);
+  box-shadow: 0 0 5px rgb(105, 105, 255);
+  outline: none;
+}
+
+/* Стилі для кольорів */
+.colors {
+  width: 150px;
+  height: 150px;
+  outline: 1px solid black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.colors-box:nth-of-type(1) {
+  background-color: red;
+}
+
+.colors-box:nth-of-type(2) {
+  background-color: gray;
+}
+
+.colors-box:nth-of-type(3) {
+  background-color: blueviolet;
+}
+
+/* Стилі для блоків кольорів */
+.colors-box {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+/* Стилі для виділення тексту жирним */
+.bold {
+  font-weight: bold;
+}
+
+/* Сховані елементи */
+.second,
+.first {
+  display: none;
+}
+
+/* Схований елемент */
+.hide {
+  display: none;
+}
+
+/* Показаний елемент */
+.show {
+  display: block;
+}
+
+/* Стилі для контейнера з кнопками */
+.center-block {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Стилі для кнопок */
+.center-block .btn-edit,
+.center-block .btn-style,
+.btn-add,
+.btn-save {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Стилі для кнопки редагування */
+.center-block .btn-edit {
+  background-color: yellow;
+  color: black;
+}
+
+/* Стилі для кнопки стилізації */
+.center-block .btn-style {
+  background-color: #2196f3;
+  color: white;
+}
+
+/* Стилі для кнопок при натисканні */
+.center-block .btn-edit:active {
+  border: 2px solid yellow;
+  box-shadow: 0 0 10px yellow;
+  transform: scale(0.95);
+}
+
+.center-block .btn-style:active {
+  border: 2px solid rgb(10, 121, 248);
+  box-shadow: 0 0 10px rgb(68, 107, 235);
+  transform: scale(0.95);
+}
+
+/* Стилі для кнопки додавання */
+.btn-add {
+  background-color: rgb(194, 26, 26);
+  color: rgb(255, 248, 248);
+}
+
+/* Стилі для кнопки збереження */
+.btn-save,
+.btn-create-table,
+.btn-create-list {
+  background-color: rgb(7, 139, 58);
+  color: white;
+}
+
+/* Зелений ховер ефект */
+.btn-save:hover,
+.btn-create-table,
+.btn-create-list:hover {
+  background-color: rgb(4, 105, 44); /* Темніший зелений для ховера */
+}
+
+/* Стилі для кнопки додавання при натисканні */
+.btn-add:active {
+  border: 2px solid rgb(158, 22, 18);
+  box-shadow: 0 0 10px rgb(223, 6, 6);
+  transform: scale(0.95);
+}
+
+/* Стилі для кнопки збереження при натисканні */
+.btn-save:active {
+  border: 2px solid rgb(20, 129, 66);
+  box-shadow: 0 0 10px rgb(12, 207, 70);
+  transform: scale(0.95);
+}
+
+/* Стилі для заголовка в формі */
+.form-size h2 {
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 19px;
+  line-height: 2;
+  font-family: monospace;
+}
+
+/* Стилі для лейблів */
+.form-size label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+/* Основний стиль радіокнопки */
+.form-size input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background: #f1f1f1;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s,
+    transform 0.2s;
+}
+
+/* Ефект при натисканні (виборі) */
+.form-size input[type="radio"]:checked {
+  background: #2196f3;
+  border-color: #2196f3;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 1),
+    0 0 3px 4px rgba(33, 150, 243, 0.5);
+}
+
+/* Внутрішня біла точка */
+.form-size input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Додаємо відступ для span */
+.form-size span {
+  margin-left: 8px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* Стилі для вирівнювання радіокнопок та тексту */
+.form-size input[type="radio"] {
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Контейнер для кастомного селекту */
+.custom-select {
+  position: relative;
+  width: 270px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Селект */
+.custom-select select {
+  width: 100%;
+  padding: 8px 35px 8px 10px;
+  appearance: none;
+  border: none;
+  border-radius: 4px;
+  background: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Стилі для іконки в кастомному селекті */
+.custom-select::after {
+  content: "▲\A▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #555;
+  pointer-events: none;
+  white-space: pre;
+}
+
+/* Голубий бордер при ховері та фокусі */
+.custom-select:hover,
+.custom-select:focus-within {
+  border-color: #5bc0de;
+  box-shadow: 0 0 5px rgba(91, 192, 222, 0.5);
+}
+
+/* Стилі для кнопок вибору текстового кольору та фону */
+.btn-text-color,
+.btn-bg-color {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #555;
+  color: #ccc;
+}
+
+/* Стиль для кнопки зміни кольору тексту при натисканні */
+.btn-text-color:active {
+  border: 3px solid rgb(112, 112, 111);
+  box-shadow: 0 0 10px rgb(71, 71, 71);
+  transform: scale(0.95);
+}
+
+/* Стиль для кнопки зміни фону при натисканні */
+.btn-bg-color:active {
+  border: 3px solid rgb(92, 92, 92);
+  box-shadow: 0 0 10px rgb(77, 77, 76);
+  transform: scale(0.95);
+}
+
+/* Стилі для форм з чекбоксами */
+.form-style,
+.form-style2 {
+  margin: 10px;
+  display: inline-block;
+  font-size: 18px;
+}
+
+/* Стилі для чекбоксів */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #ccc;
+  border-radius: 20%;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #fff;
+}
+
+/* Стилі для чекбоксів при активності */
+input[type="checkbox"]:active {
+  border-color: #007bff;
+}
+
+/* Стилі для чекбоксів при наведенні */
+input[type="checkbox"]:hover {
+  border: 2px solid rgb(71, 71, 71);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилі для чекбоксів, коли вони відмічені */
+input[type="checkbox"]:checked {
+  background-color: #2196f3;
+  border-color: #2196f3;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+  position: relative;
+}
+
+/* Галочка в середині */
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Стилі для радіокнопок */
+input[type="radio"].choose1 {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  background: #f1f1f1;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s,
+    box-shadow 0.3s;
+  margin: 5px;
+}
+
+/* Ефект при наведенні */
+input[type="radio"].choose1:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Ефект розширення бордера при виборі */
+input[type="radio"].choose1:checked {
+  background: #2196f3;
+  border-color: #2196f3;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 1),
+    0 0 8px 4px rgba(33, 150, 243, 0.5);
+}
+
+/* Стилізація центру радіокнопки при виборі */
+input[type="radio"].choose1:checked::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Стилі для тексту поруч із радіокнопкою */
+form span.t3 {
+  font-size: 16px;
+  color: #333;
+  margin-left: 4px;
+}
+/* Основні стилі для таблиці */
+.table-form {
+  width: 1100px; /* Ширина таблиці */
+  height: auto;
+  margin-top: 20px;
+  min-height: 300px;
+}
+
+/* Стилі для групи елементів форми */
+.form-group {
+  width: 1142px; /* Ширина групи */
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* Стилі для input елементів, таких як рядки таблиці */
+.input-tr,
+.input-td,
+.input-width,
+.input-height,
+.input-count {
+  height: 40px;
+  width: 940px;
+  border: 2px solid #ccc; /* Боксовий бордер для елементів */
+  border-radius: 5px; /* Заокруглені кути */
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Анімація при ховері */
+}
+
+/* Стилі для input елемента .input-count (відступ зліва) */
+.input-count {
+  margin-left: 58px;
+}
+
+/* Група форм */
+.form-group1 {
+  width: 940px;
+  height: 40px;
+}
+
+/* Відступи для конкретних елементів */
+.input-tr {
+  margin-left: 55px;
+}
+
+.input-td {
+  margin-left: 63px;
+}
+
+.input-width {
+  margin-left: 37px;
+}
+
+.input-height {
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+/* Стилі для ширини бордера */
+.input-border-width {
+  height: 40px;
+  width: 115px;
+  margin-left: 38px;
+  margin-right: 25px;
+}
+
+/* Стилі для всіх input елементів */
+input {
+  padding: 10px;
+}
+
+/* Стилі для select елементів та їх бордерів */
+.select-border-type,
+.input-border-color {
+  height: 40px;
+  width: 115px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 10px;
+  border: 2px solid #cfc5c5; /* Бордер для select */
+  border-radius: 4px;
+}
+
+/* Ефект hover для input та select елементів */
+input[type="text"]:hover,
+select:hover {
+  border-color: #87cefa; /* Світло-блакитний колір при ховері */
+}
+
+/* Стилі для заголовків */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Hover ефект для select */
+select:hover {
+  border-color: #87cefa;
+}
+
+/* Hover та Focus ефекти для select */
+select:hover,
+select:focus {
+  border-color: #87cefa; /* Світло-блакитний колір при ховері або фокусі */
+  outline: none;
+}
+
+/* Стилі для таблиці */
+table {
+  width: auto;
+  border-collapse: collapse; /* Щоб бордери не накладалися */
+}
+
+/* Стилі для заголовків таблиці */
+.t3 {
+  font-size: xx-large;
+  font-family: monospace;
+}
+
+/* Стилі для клітинок таблиці */
+td {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  font-size: 10px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+/* Стилі для групи форм */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Стилі для кнопок створення таблиці та списку */
+.btn-create-table,
+.btn-create-list {
+  width: 120px;
+  height: 40px;
+  color: white;
+  border-radius: 4px;
+  font-size: 18px;
+  border: 2px solid transparent;
+}
+
+.btn-create-list {
+  margin-top: 25px;
+}
+
+/* Стилі для тексту з класом t4 */
+.t4 {
+  font-weight: bold;
+}
+
+/* Стилі для select елементів (з вашими класами) */
+.select-border-type,
+.input-border-color,
+.select-type {
+  position: relative;
+  width: 120px;
+  padding: 10px;
+  padding-right: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  appearance: none; /* Очищаємо стандартні стилі */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* Контейнер для стрілки у select */
+.select-border-type,
+.input-border-color,
+.select-type {
+  background-image: linear-gradient(45deg, transparent 50%, #555 50%),
+    linear-gradient(-45deg, transparent 50%, #555 50%);
+  background-position: right 12px top 50%, right 5px top 50%;
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+}
+
+/* Hover ефект для select */
+.select-border-type:hover,
+.input-border-color:hover {
+  border-color: #87cefa;
+}
+
+/* Стилі для select з класом .select-type */
+.select-type {
+  width: 940px;
+  height: 40px;
+  margin-left: 15px;
+}
+
+/* Focus ефект для select */
+.select-border-type:focus,
+.input-border-color:focus,
+.select-type:focus {
+  border-color: #1e90ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+}
+
+/* Стилі для форм, що містять списки */
+.list-form {
+  width: 1100px;
+  height: 170px;
+  margin-top: 35px;
+}
+
+/* Стилі для групи форм 2 */
+.form-group2 {
+  width: 1100px;
+  height: 40px;
+  margin-bottom: 10px;
+}
